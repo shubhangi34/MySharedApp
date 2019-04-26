@@ -1,0 +1,53 @@
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+
+<div class="topnav sticky" id="myTopnav" >
+  <a href="" (click)="logout()" >Logout</a>
+  <a style="padding-left: 400px">{{heading}}</a>
+  <a (click)="Add()" style="float: right">Add</a>
+</div>
+
+<div class="flex-container">
+  <div class="colm-1">
+    <!-- <h3><p class="dynamicHeader" style="text-align: center; color: green">{{header}}</p></h3> -->
+<br>
+<br>
+    <h2>My Team</h2>
+<ul class="heroes">
+  <li *ngFor="let t of teamdata" (click)="onSelect(t)">
+    <span class="badge">{{t.team_id}}</span>
+     {{t.team_name}}
+     <span class="badge" style="float:right">{{t.amount}}</span>
+  </li>
+</ul>
+
+
+</div>
+
+<div class="colm-2">
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+  <app-updateteam [t]="selectedTeam"></app-updateteam>
+<!-- <div class="login-page">  
+  <div class="form">
+  
+  <form >
+    <label style="float:left; text-align:left; color: black">Name
+  
+    <input type="text"   placeholder="Name" required/>
+  </label>
+  
+    <label style="float:left;text-align:left; color:  black">Amount
+  
+    <input type="text"  placeholder="Amount" required/>
+  </label>
+    <button type="submit">Add</button>
+  </form> 
+  </div>
+  </div> -->
+</div>
+</div>

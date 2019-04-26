@@ -1,0 +1,23 @@
+<div *ngIf="t">
+
+    <div class="login-page">
+        <h1 style="color:black; text-align:center">Update</h1>
+      
+      <div class="form">
+      <h3>{{t.team_id}}</h3>
+      <form [formGroup]="updateform" (ngSubmit)="updatedvalue(updateform.value)">
+        <label style="float:left; text-align:left; color: black">Name
+      
+        <input type="text" value={{t.team_name}} formControlName="team_name" required/>
+      </label>
+      
+        <label style="float:left;text-align:left; color:  black">Amount
+      
+        <input type="text" value= {{t.amount}} formControlName="amount" required/>
+      </label>
+        <button type="submit" >Update</button>
+      </form>
+      </div>
+      </div>
+
+</div>
